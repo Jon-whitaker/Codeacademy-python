@@ -1,0 +1,2010 @@
+Check out Python Modules.
+
+.upper() .lower(), str(), and len()
+
+
+    Equal to (==)
+    Not equal to (!=)
+    Less than (<)
+    Less than or equal to (<=)
+    Greater than (>)
+    Greater than or equal to (>=)
+
+ # a =return= will return a result AND will EXIT the function !!!
+
+
+answer = "'Tis but a scratch!"
+
+def black_knight():
+    if answer == "'Tis but a scratch!":
+        return True
+    else:             
+        return False # Make sure this returns False
+
+def french_soldier():
+    if answer == "Go away, or I shall taunt you a second time!":
+        return True
+    else:             
+        return False     # Make sure this returns False
+
+
+--------------------------------------------------------
+def greater_less_equal_5(answer):
+    if (answer) > 5:
+        return 1
+    elif (answer) < 5:    
+        return -1
+    else:
+        return 0
+        
+print greater_less_equal_5(4)
+print greater_less_equal_5(5)
+print greater_less_equal_5(6)
+
+------------------------------------------------------
+		
+name = raw_input("What is your name?")
+quest = raw_input("What is your quest?")
+color = raw_input("What is your favorite color?")
+
+print "Ah, so your name is %s, your quest is %s, " \
+"and your favorite color is %s." % (name, quest, color)
+		
+		
+--------------------------------------------------------------------------
+		
+		
+#	
+		
+print 'Welcome to the Pig Latin Translator!'
+
+# Start coding here!
+original = raw_input("what's your name?")
+if len(original) > 0:
+    print "Hello " +  (original)
+else:
+    print "empty" 
+
+	
+	print 'Welcome to the Pig Latin Translator!'
+
+# Start coding here!
+original = raw_input("what's your name?")
+if len(original) > 0 and original.isalpha():
+    print "Hello " +  (original)
+else:
+    print "empty" 
+	
+	
+	pyg = 'ay'
+
+original = raw_input('Enter a word:')
+
+if len(original) > 0 and original.isalpha():
+    print original
+    word = original.lower()
+    first = word[0]
+else:
+    print 'empty'
+
+	
+	
+-----------------------------------------------
+
+def clinic():
+    print "You've just entered the clinic!"
+    print "Do you take the door on the left or the right?"
+    answer = raw_input("Type left or right and hit 'Enter'.").lower()
+    if answer == "left" or answer == "l":
+        print "This is the Verbal Abuse Room, you heap of parrot droppings!"
+    elif answer == "right" or answer == "r":
+        print "Of course this is the Argument Room, I've told you that already!"
+    else:
+        print "You didn't pick left or right! Try again."
+        clinic()
+
+clinic()
+
+
+	
+------------------------------------ cubed ---------------------------------
+
+def cube(n):
+    cubed = n**3
+    print "%d cubed is %d" % (n, cubed)
+    return cubed
+    
+cube(3)
+
+def by_three(n):
+    by_three = n / 3
+    if n % 3==0:
+        print "%d is divisible by 3" % (n)
+        return cube(n)
+    else:
+        return False
+
+		
+------------------------------------ import ---------------------------------
+
+
+import math
+print math.sqrt(25)
+
+from <module> import <function>
+so..
+from math import sqrt
+
+import math            # Imports the math module
+everything = dir(math) # Sets everything to a list of things from math
+print everything       # Prints 'em all!
+
+from math import sqrt
+print sqrt(13689)
+
+from datetime import datetime
+now = datetime.now()
+print now
+
+from datetime import datetime
+now = datetime.now()
+current_year = now.year
+current_month = now.month
+current_day = now.day
+print now.year
+print now.month
+print now.day
+
+from datetime import datetime
+now = datetime.now()
+
+print '%s/%s/%s' % (now.month, now.day, now.year)
+
+from datetime import datetime
+now = datetime.now()
+
+print '%s/%s/%s %s:%s:%s' % (now.month, now.day, now.year, now.hour, now.minute, now.second)
+
+---------------------------------
+
+
+
+def biggest_number(*args):
+    print max(args)
+    return max(args)
+    
+def smallest_number(*args):
+    print min(args)
+    return min(args)
+
+def distance_from_zero(arg):
+    print abs(arg)
+    return abs(arg)
+
+
+biggest_number(-10, -5, 5, 10)
+smallest_number(-10, -5, 5, 10)
+distance_from_zero(-10)
+
+
+The abs() function returns the absolute value of the number it takes as an argument—that is, that number's distance from 0 on an imagined number line. For instance, 3 and -3 both have the same absolute value: 3. The abs() function always returns a positive value, and unlike max() and min(), it only takes a single number.
+
+
+----------------------------------- Shut_down --------------------------------
+
+
+
+def shut_down(s):
+    shut_down = "Shutting down"
+    shut_abort = "Shutdown aborted"
+    Sorry = "Sorry"
+    if  s=="yes":
+        return shut_down
+        print "Shutting down"
+    elif s=="no":
+        return Shut_abort
+        print "Shutdown aborted"
+    else:
+        return Sorry
+
+		
+		
+def is_numeric(num):
+    return type(num) == int or type(num) == float:
+
+
+
+
+------------------------------------------------
+
+
+
+
+def distance_from_zero(arg):
+    nope = "Nope"
+    
+    if type(arg) == int or type(arg) == float:
+        return abs(arg)
+        print abs(arg)
+    else:
+        return nope
+
+distance_from_zero(20)
+
+
+
+
+
+
+
+when creating functions with hierarchical number parameters, (for instance discount for the more bought) make sure the highest is at the top.
+Because Python works like an access-list, as long as an option meets a chriteria it will take that option.. so if you have discount for 10 and more discount for 20 then more still for 40 etc.. and you buy 40 but at the top of your list you put in the 10 option followed by the 20 and then the 40, the list will pick up that you've bought 40, but when it scans it'll hit the 10 first and say, yep, 10.. so the 10 discount.. and it won't even check the other options.. 
+so always do the larger first so it has to check down the list from highest to lowest.
+
+
+
+Below your existing code, define a function called trip_cost that takes two arguments,
+ city and days.
+Like the example above,
+have your function return the sum of calling the rental_car_cost(days),
+hotel_cost(days),
+and plane_ride_cost(city) functions.
+
+below is an example excerpt
+def double(n):
+    return 2 * n
+def triple(p):
+    return 3 * p
+
+def add(a, b):
+    return double(a) + triple(b)
+
+It is completely valid
+to call the hotel_cost(nights) function 
+with the variable days. 
+Just like the example above 
+where we call double(n) with the variable a, 
+we pass the value of days to the new function in the argument nights.
+
+---------------------------------------- code ---------------------------------------
+def hotel_cost(nights):
+    hotel_cost = 140 * nights
+    print hotel_cost
+    return hotel_cost
+
+def plane_ride_cost(city):
+    Charlotte = 183
+    Tampa = 220
+    Pittsburgh = 222
+    Los_Angeles = 475
+    
+    if city=="Charlotte":
+        return Charlotte
+        print 183
+    elif city == "Tampa":
+        return Tampa
+        print 220
+    elif city == "Pittsburgh":
+        return Pittsburgh
+        print 222
+    elif city == "Los Angeles":
+        return Los_Angeles
+        print 475
+
+def rental_car_cost(days):
+    rental_car_cost = 40 * days
+    if days >= 7:
+        rental_car_cost -=50
+    elif days >= 3:
+        rental_car_cost -=20
+    return rental_car_cost    
+        
+def spending_money(dollars):
+    spending_money = dollars * 1
+    return spending_money
+
+def trip_cost(city, days, dollars):
+    print trip_cost(city, days, dollars)
+    return (hotel_cost(days) + rental_car_cost(days)) + spending_money(dollars) + plane_ride_cost(city)
+
+
+
+---------------------------------------
+
+letters = ['a', 'b', 'c']
+letters.append('d')
+print len(letters)
+print letters
+
+---------------------------------------
+
+letters = ['a', 'b', 'c', 'd', 'e']
+slice = letters[1:3]
+print slice
+print letters
+
+we take a subsection and store it in the slice list. We start at the index before the colon and continue up to but not including the index after the colon.
+If your list slice includes the very first or last item in a list (or a string), the index for that item doesn't have to be included:
+animals = "catdogfrog"
+cat  = animals[:3]
+
+
+---------------------------------------
+
+
+
+Sometimes you need to search for an item in a list.
+
+animals = ["ant", "bat", "cat"]
+print animals.index("bat")
+
+    First, we create a list called animals with three strings.
+    Then, we print the first index that contains the string "bat", which will print 1.
+
+We can also insert items into a list.
+
+animals.insert(1, "dog")
+print animals
+
+    We insert "dog" at index 1, which moves everything down by 1.
+    We print out ["ant", "dog", "bat", "cat"]
+
+
+----------------------------------- lesson below:
+
+this was an odd lesson.. we created a separate .index (duck_index), which indexed animals.
+we then further down inserted into animals at the duck_index location "cobra" meaning we didn't have to use a number, 
+we could just use the index as the ref.
+
+
+animals = ["aardvark", "badger", "duck", "emu", "fennec fox"]
+duck_index = animals.index("duck")   # Use index() to find "duck"
+print duck_index
+# Your code here!
+animals.insert(duck_index,"cobra")
+
+
+print animals # Observe what prints after the insert operation
+
+
+-----------------------------------A "For" Loop -----------------------------------
+
+"number" is a built in function, so is "item".
+
+
+Each list item is assigned to the user-defined variable number in turn. All you need to do is print two times number in the body of the loop (the indented part).
+
+The for loop will automatically execute your code as many times as there are items in my_list!
+
+
+my_list = [1,9,3,8,5,7]
+
+for number in my_list:
+    print number * 2
+	
+	
+-----------------------------------
+
+
+    First, we create a list called animals with three strings. The strings are not in alphabetical order.
+    Then, we sort animals into alphabetical order. Note that .sort() modifies the list rather than returning a new list.
+    Then, for each item in animals, we print that item out as "ant", "bat", "cat" ON THEIR OWN LINE EACH.
+
+-----------------------------------
+
+
+start_list = [5, 3, 1, 2, 4]
+square_list = []
+print start_list
+
+for number in start_list:
+    square_list.append(number ** 2)
+square_list.sort()
+print square_list
+
+
+
+names = ["Adam","Alex","Mariah","Martine","Columbus"]
+
+for item in names:
+    print item
+	
+-----------------------------------
+
+
+You can also use a for loop on a dictionary to loop through its keys with the following:
+
+# A simple dictionary
+d = {"foo" : "bar"}
+
+for key in d: 
+    print d[key]  # prints "bar" 
+
+Note that dictionaries are unordered, meaning that any time you loop through a dictionary, you will go through every key, but you are not guaranteed to get them in any particular order.
+
+-----------------------------------
+
+webster = {
+	"Aardvark" : "A star of a popular children's cartoon show.",
+    "Baa" : "The sound a goat makes.",
+    "Carpet": "Goes on the floor.",
+    "Dab": "A small amount."
+}
+
+
+for key in webster:
+    print webster[key]
+	
+	
+-----------------------------------
+
+The blocks of code in a for loop can be as big or as small as they need to be.
+
+While looping, you may want to perform different actions depending on the particular item in the list.
+
+numbers = [1, 3, 4, 7]
+for number in numbers: 
+    if number > 6:
+        print number
+print "We printed 7."
+
+    In the above example, we create a list with 4 numbers in it.
+    Then we loop through the numbers list and store each item in the list in the variable number.
+    On each loop, if number is greater than 6, we print it out. So, we print 7.
+    Finally, we print out a sentence.
+
+Make sure to keep track of your indentation or you may get confused!
+
+*************** The below only prints even numbers!! **************
+
+a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+for number in a:
+    if number % 2 == 0:
+        print number
+
+
+
+A number is even if it's evenly divisible by 2. You can determine divisibility with the modulus operator: %.
+
+For example, to check if the value inside of a variable, item, is divisible by 10, you can do item % 10 == 0. This will evaluate to True if the number in item is evenly divisible by 10 (yielding a remainder of zero).
+
+-----------------------------------
+
+def count_small(numbers):
+    total = 0
+    for n in numbers:
+        if n < 10:
+            total = total + 1
+    return total
+
+lost = [4, 8, 15, 16, 23, 42]
+small = count_small(lost)
+print small
+
+-----------------------------------
+
+# Write your function below!
+def fizz_count(bits):
+    count = 0
+    for item in bits:
+        if item == "fizz":
+            count = count + 1
+    return count
+    
+x = ["fizz", "big", "large", "semi", "fizz", "semi", "fizz", "big", "fizz", "fizz", "semi", "fizz"]
+pick = fizz_count(x)
+print pick
+
+-----------------------------------
+
+
+
+----------------------------------- Dictionaries -----------------------------------
+
+
+
+A dictionary is similar to a list, but you access values by looking up a key instead of an index. A key can be any string or number. Dictionaries are enclosed in curly braces, like so:
+
+d = {'key1' : 1, 'key2' : 2, 'key3' : 3}
+
+This is a dictionary called d with three key-value pairs. The key 'key1' points to the value 1, 'key2' to 2, and so on.
+
+Dictionaries are great for things like phone books (pairing a name with a phone number), login pages (pairing an e-mail address with a username), and more!
+
+
+
+# Assigning a dictionary with three key-value pairs to residents:
+residents = {'Puffin' : 104, 'Sloth' : 105, 'Burmese Python' : 106}
+
+print residents['Puffin'] # Prints Puffin's room number
+
+print residents['Sloth']
+print residents['Burmese Python']
+
+
+An empty pair of curly braces {} is an empty dictionary, just like an empty pair of [] is an empty list.
+
+The length len() of a dictionary is the number of key-value pairs it has. Each pair counts only once, even if the value is a list. (That's right: you can put lists inside dictionaries!)
+
+-----------------------------------
+menu = {} # Empty dictionary
+menu['Chicken Alfredo'] = 14.50 # Adding new key-value pair
+print menu['Chicken Alfredo']
+
+# Your code here: Add some dish-price pairs to menu!
+menu['Pizza'] = 6.00
+menu['Pasta Arabiatta'] = 11.00
+menu['steak al a tet'] = 16.50
+
+print "There are " + str(len(menu)) + " items on the menu."
+print menu
+-----------------------------------
+del dict_name[key_name]
+will remove the key key_name and its associated value from the dictionary.
+
+A new value can be associated with a key by assigning a value to the key, like so:
+dict_name[key] = new_value
+-----------------------------------
+# key - animal_name : value - location 
+zoo_animals = { 'Unicorn' : 'Cotton Candy House',
+'Sloth' : 'Rainforest Exhibit',
+'Bengal Tiger' : 'Jungle House',
+'Atlantic Puffin' : 'Arctic Exhibit',
+'Rockhopper Penguin' : 'Arctic Exhibit'}
+# A dictionary (or list) declaration may break across multiple lines
+
+# Removing the 'Unicorn' entry. (Unicorns are incredibly expensive.)
+del zoo_animals['Unicorn']
+
+# Your code here!
+del zoo_animals['Sloth']
+del zoo_animals['Bengal Tiger']
+zoo_animals['Rockhopper Penguin'] = 'Bermuda Triangle'
+
+
+print zoo_animals
+-----------------------------------
+
+We create a list called beatles with 5 strings.
+Then, we remove the first item from beatles that matches the string "stuart". Note that .remove(item) does not return anything.
+Finally, we print out that list just to see that "stuart" was actually removed.
+
+-----------------------------------
+
+
+backpack = ['xylophone', 'dagger', 'tent', 'bread loaf']
+backpack.remove('dagger')
+print backpack
+-----------------------------------
+
+ Instructions
+
+    Add a key to inventory called 'pocket'
+    Set the value of 'pocket' to be a list consisting of the strings 'seashell', 'strange berry', and 'lint'
+    .sort() the items in the list stored under the 'backpack' key
+    Then .remove('dagger') from the list of items stored under the 'backpack' key
+    Add 50 to the number stored under the 'gold' key
+
+
+
+inventory = {
+    'gold' : 500,
+    'pouch' : ['flint', 'twine', 'gemstone'], # Assigned a new list to 'pouch' key
+    'backpack' : ['xylophone','dagger', 'bedroll','bread loaf']
+}
+
+# Adding a key 'burlap bag' and assigning a list to it
+inventory['burlap bag'] = ['apple', 'small ruby', 'three-toed sloth']
+
+# Sorting the list found under the key 'pouch'
+inventory['pouch'].sort() 
+
+# Your code here
+inventory['pocket'] = ['seashell', 'strange berry', 'lint']
+inventory['backpack'].sort()
+inventory['backpack'].remove('dagger')
+inventory['gold'] = 550
+
+-----------------------------------
+
+
+for letter in "Codecademy":
+    print letter
+    
+# Empty lines to make the output pretty
+print
+print
+
+word = "Programming is fun!"
+
+for letter in word:
+    # Only print out the letter i
+    if letter == "i":
+        print letter
+		
+-----------------------------------
+
+
+prices = {
+    "banana" : 4,
+    "apple"  : 2,
+    "orange" : 1.5,
+    "pear"   : 3,
+}
+stock = {
+    "banana" : 6,
+    "apple"  : 0,
+    "orange" : 32,
+    "pear"   : 15,
+}
+
+for key in prices:
+    print key
+    print "price: %s" % prices[key]
+    print "stock: %s" % stock[key]
+    key_total = prices[key] * stock[key]
+    print key_total
+    total = total + key_total
+    
+print total
+
+total needs to be outside the loop, I had total inside the loop and everytime it hit "total = 0" it would reset the total.
+
+
+-----------------------------------
+def sum(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+n = [1, 2, 5, 10, 13]
+print sum(n)
+
+    In the above example, we first define a function called sum with an argument numbers.
+    We initialize the variable total that we will use as our running sum.
+    For each number in the list, we add that number to the running sum total.
+    At the end of the function, we return the running sum.
+    After the function, we create, n, a list of numbers.
+    Finally, we call the sum(numbers) function with the variable n and print the result.
+	
+
+
+-----------------------------------
+
+shopping_list = ["banana", "orange", "apple"]
+
+
+stock = {
+    "banana": 6,
+    "apple": 0,
+    "orange": 32,
+    "pear": 15
+}
+    
+prices = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3
+}
+
+# Write your code below!
+
+def compute_bill(food):
+    total = 0    
+    for key in prices:
+        for item in food:
+            if key == item:
+                total += prices[key]
+    return total
+    print total
+
+n = shopping_list
+go = compute_bill(n)
+print go 
+
+
+-----------------------------------
+
+
+stock = {
+    "banana": 6,
+    "apple": 0,
+    "orange": 32,
+    "pear": 15
+}
+
+new_stock = {
+    "banana": 6,
+    "apple": 0,
+    "orange": 32,
+    "pear": 15
+}
+ 
+prices = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3
+}
+# the way I did it, (which works fine)
+def compute_bill(food):
+    total = 0    
+    for key in prices:
+        for item in food:
+            if key == item:
+                if new_stock[key] * prices[key] > 0:
+                    total += prices[key]
+                    new_stock[key] -= 1
+    return total
+    print total
+    
+#forum suggestion on how to write it:
+def compute_bill(food):
+	total = 0
+	for key in food: # this line is interesting when compared to my code above, it seems to combine the two.	
+		if stock[key] > 0:
+			total += prices[key]
+			stock[key] -= 1
+	return total
+n = shopping_list
+go = compute_bill(n)
+print go 
+
+-----------------------------------
+
+lloyd = {
+    "name": "Lloyd",
+    "homework": [90.0, 97.0, 75.0, 92.0],
+    "quizzes": [88.0, 40.0, 94.0],
+    "tests": [75.0, 90.0]
+}
+alice = {
+    "name": "Alice",
+    "homework": [100.0, 92.0, 98.0, 100.0],
+    "quizzes": [82.0, 83.0, 91.0],
+    "tests": [89.0, 97.0]
+}
+tyler = {
+    "name": "Tyler",
+    "homework": [0.0, 87.0, 75.0, 22.0],
+    "quizzes": [0.0, 75.0, 78.0],
+    "tests": [100.0, 100.0]
+}
+
+
+students = ["tyler" "alice" "lloyd"] 
+
+for s in students:
+    print s["name"],s["homework"],s["quizzes"],s["tests"]
+	
+#variation
+for s in students:
+    stulist = s["name"],s["homework"],s["quizzes"],s["tests"]
+    print stulist
+#variation
+def average(numbers):
+    for n in numbers:
+        lenlist = len(n["homework"] + n["quizzes"] + n["tests"])
+        numlist = sum(n["homework"] + n["quizzes"] + n["tests"])
+        total = numlist / lenlist
+        print float(total)
+
+print average(students)
+#variation
+
+-----------------------------------
+
+lloyd = {
+    "name": "Lloyd",
+    "homework": [90.0, 97.0, 75.0, 92.0],
+    "quizzes": [88.0, 40.0, 94.0],
+    "tests": [75.0, 90.0]
+}
+alice = {
+    "name": "Alice",
+    "homework": [100.0, 92.0, 98.0, 100.0],
+    "quizzes": [82.0, 83.0, 91.0],
+    "tests": [89.0, 97.0]
+}
+tyler = {
+    "name": "Tyler",
+    "homework": [0.0, 87.0, 75.0, 22.0],
+    "quizzes": [0.0, 75.0, 78.0],
+    "tests": [100.0, 100.0]
+}
+
+# Add your function below!
+numbers = [1.3,3,4,5]
+def average(numbers):
+    total = float(0)
+    for n in numbers:
+        total = total + sum(numbers)
+        result = total / len(numbers)
+        print sum(numbers)
+        print len(numbers)
+        print result
+        return result
+average(numbers)
+
+-----------------------------------
+
+cost = {
+    "apples": [3.5, 2.4, 2.3],
+    "bananas": [1.2, 1.8],
+}
+
+return 0.9 * average(cost["apples"]) + \
+0.1 * average(cost["bananas"])
+
+    In the above example, we create a dictionary called cost that contains the costs of some fruit.
+    Then, we calculate the average cost of apples and the average cost of bananas. Since we like apples much more than we like bananas, we weight the average cost of apples by 90% and the average cost of bananas by 10%.
+
+The \ character is a continuation character. The following line is considered a continuation of the current line.
+
+-----------------------------------
+
+
+lloyd = {
+    "name": "Lloyd",
+    "homework": [90.0, 97.0, 75.0, 92.0],
+    "quizzes": [88.0, 40.0, 94.0],
+    "tests": [75.0, 90.0]
+}
+alice = {
+    "name": "Alice",
+    "homework": [100.0, 92.0, 98.0, 100.0],
+    "quizzes": [82.0, 83.0, 91.0],
+    "tests": [89.0, 97.0]
+}
+tyler = {
+    "name": "Tyler",
+    "homework": [0.0, 87.0, 75.0, 22.0],
+    "quizzes": [0.0, 75.0, 78.0],
+    "tests": [100.0, 100.0]
+}
+
+# Add your function below!
+
+numbers = [1.3,3,4,5]
+def average(numbers):
+    total = float(0)
+    for n in numbers:
+        total = total + sum(numbers)
+        result = total / len(numbers)
+        print sum(numbers)
+        print len(numbers)
+        print result
+        return result
+
+def get_average(student):
+    for s in student:
+        return 0.1 * average(student["homework"]) + 0.3 * average(student["quizzes"]) + 0.6 * average(student["tests"])
+        print 0.1 * average(student["homework"]) + 0.3 * average(student["quizzes"]) + 0.6 * average(student["tests"])
+
+        
+get_average(alice)
+
+
+-----------------------------------
+
+lloyd = {
+    "name": "Lloyd",
+    "homework": [90.0, 97.0, 75.0, 92.0],
+    "quizzes": [88.0, 40.0, 94.0],
+    "tests": [75.0, 90.0]
+}
+
+alice = {
+    "name": "Alice",
+    "homework": [100.0, 92.0, 98.0, 100.0],
+    "quizzes": [82.0, 83.0, 91.0],
+    "tests": [89.0, 97.0]
+}
+
+tyler = {
+    "name": "Tyler",
+    "homework": [0.0, 87.0, 75.0, 22.0],
+    "quizzes": [0.0, 75.0, 78.0],
+    "tests": [100.0, 100.0]
+}
+
+# Add your function below!
+
+#numbers = [1.3,3,4,5]
+def average(numbers):
+    total = float(0)
+    for n in numbers:
+        total = total + sum(numbers)
+        result = total / len(numbers)
+        #print sum(numbers)
+        #print len(numbers)
+        #print result
+        return result
+
+def get_average(student):
+    for s in student:
+        avr = 0.1 * average(student["homework"]) + 0.3 * average(student["quizzes"]) + 0.6 * average(student["tests"])
+        #print avr
+        return avr
+        
+        
+def get_letter_grade(score):
+    if score >= 90:
+        print "A"
+        return "A"
+    elif score >= 80:
+        print "B"
+        return "B"
+    elif score >= 70:
+        print "C"
+        return "C"
+    elif score >= 60:
+        print "D"
+        return "D"
+    else:
+        return "F"
+        print "F"
+
+
+print get_letter_grade(get_average(lloyd))
+
+
+-----------------------------------
+
+ok, so I originally finished the avoce lesson using just one function as opposed to here a function inside a function:
+see below and compare to above, in the last function I've referenced the function above it.
+
+lloyd = {
+    "name": "Lloyd",
+    "homework": [90.0, 97.0, 75.0, 92.0],
+    "quizzes": [88.0, 40.0, 94.0],
+    "tests": [75.0, 90.0]
+}
+
+alice = {
+    "name": "Alice",
+    "homework": [100.0, 100.0, 100.0, 100.0],
+    "quizzes": [100.0, 100.0, 100.0],
+    "tests": [100.0, 100.0]
+}
+
+tyler = {
+    "name": "Tyler",
+    "homework": [0.0, 87.0, 75.0, 22.0],
+    "quizzes": [0.0, 75.0, 78.0],
+    "tests": [100.0, 100.0]
+}
+
+# Add your function below!
+
+#numbers = [1.3,3,4,5]
+def average(numbers):
+    total = float(0)
+    for n in numbers:
+        total = total + sum(numbers)
+        result = total / len(numbers)
+        #print sum(numbers)
+        #print len(numbers)
+        #print result
+        return result
+
+def get_average(student):
+    for s in student:
+        avr = 0.1 * average(student["homework"]) + 0.3 * average(student["quizzes"]) + 0.6 * average(student["tests"])
+        #print avr
+        return avr
+        
+        
+def get_letter_grade(score):
+    for s in score:
+        if get_average(score) >= 90:
+            print "A"
+            return "A"
+        elif get_average(score) >= 80:
+            print "B"
+            return "B"
+        elif get_average(score) >= 70:
+            print "C"
+            return "C"
+        elif get_average(score) >= 60:
+            print "D"
+            return "D"
+        else:
+            return "F"
+            print "F"
+
+students = [tyler, alice, lloyd]
+
+def get_class_average(students):
+    results=[]
+    for student in students:
+        results.append(get_average(student))
+    return average(results)
+	
+print get_class_average(students)
+
+-----------------------------------
+
+n = [1, 3, 5]
+# Do your multiplication here
+slice = n[1] *5
+print slice
+n[1] = slice # here I had to look on the internet.. because the lesson is crap.. but, the instruction actually wanted us to replace n[1] with a new variable.
+print n
+
+-----------------------------------
+
+n = [1, 3, 5]
+# Append the number 4 here
+n.append(4)
+print n
+
+
+-----------------------------------
+
+
+
+This exercise will expand on ways to remove items from a list. You actually have a few options. For a list called n:
+
+    n.pop(index) will remove the item at index from the list and return it to you:
+
+n = [1, 3, 5]
+n.pop(1)
+# Returns 3 (the item at index 1)
+print n
+# prints [1, 5]
+
+    n.remove(item) will remove the actual item if it finds it:
+
+n.remove(1)
+# Removes 1 from the list,
+# NOT the item at index 1
+print n
+# prints [3, 5]
+
+    del(n[1]) is like .pop in that it will remove the item at the given index, but it won't return it:
+
+del(n[1])
+# Doesn't return anything
+print n
+# prints [1, 5]
+
+
+-----------------------------------
+
+m = 5
+n = 13
+# Add add_function here!
+def add_function(m, n):
+    return m + n
+
+
+print add_function(m, n)
+-----------------------------------
+
+def list_function(x):
+    slice = x[1] + 3
+    x[1] = slice
+    return x
+
+n = [3, 5, 7]
+print list_function(n)
+
+-----------------------------------
+n = [3, 5, 7]
+# Add your function here
+def list_extender(list):
+    list.append(9)
+    return list
+
+
+print list_extender(n)
+
+
+-----------------------------------
+n = [3, 5, 7]
+
+def print_list(x):
+    for i in range(0, len(x)):
+        print x[i]
+    
+print print_list(n)    
+
+#prints the list one character at a time in a column.
+
+-----------------------------------
+
+n = [3, 5, 7]
+
+def double_list(x):
+    for i in range(0, len(x)):
+        x[i] = x[i] * 2
+    return x
+    print x
+# Don't forget to return your new list!
+
+print double_list(n)
+
+-----------------------------------
+
+
+Okay! Range time. The Python range() function is just a shortcut for generating a list, so you can use ranges in all the same places you can use lists.
+
+range(6) # => [0,1,2,3,4,5]
+range(1,6) # => [1,2,3,4,5]
+range(1,6,3) # => [1,4]
+
+The range function has three different versions:
+
+    range(stop)
+    range(start, stop)
+    range(start, stop, step)
+
+In all cases, the range() function returns a list of numbers from start up to (but not including) stop. Each item increases by step.
+
+If omitted, start defaults to zero and step defaults to one.
+
+def my_function(x):
+    for i in range(0, len(x)):
+        x[i] = x[i] * 2
+    return x
+
+print my_function(range(0,3)) # Add your range between the parentheses!
+
+-----------------------------------
+
+
+
+Now that we've learned about range, we have two ways of iterating through a list.
+
+Method 1 - for item in list:
+
+for item in list:
+    print item
+
+Method 2 - iterate through indexes:
+
+for i in range(len(list)):
+    print list[i]
+
+Method 1 is useful to loop through the list, but it's not possible to modify the list this way. Method 2 uses indexes to loop through the list, making it possible to also modify the list if needed. Since we aren't modifying the list, feel free to use either one on this lesson!
+
+
+n = [3, 5, 7]
+
+def total(numbers):
+    result = 0
+    for i in range(len(numbers)):
+        result += numbers[i]
+    return result
+    print result
+    
+print total(n)
+
+#adds all numbers together in the list
+-----------------------------------
+Concatenating Lists
+
+n = ["Michael", "Lieberman"]
+# Add your function here
+
+def join_strings(words):
+    result = ""
+    for i in range(len(words)):
+        result += words[i]
+    return result
+    print result
+
+print join_strings(n)
+
+-----------------------------------
+a = [1, 2, 3]
+b = [4, 5, 6]
+print a + b
+# prints [1, 2, 3, 4, 5, 6]
+
+-----------------------------------
+
+m = [1, 2, 3]
+n = [4, 5, 6]
+
+def join_lists(x, y):
+    return x + y
+    print x + y
+
+print join_lists(m, n)
+# You want this to print [1, 2, 3, 4, 5, 6]
+
+
+-----------------------------------
+
+
+Finally, this exercise shows how to make use of a single list that contains multiple lists and how to use them in a function.
+
+list_of_lists = [[1,2,3], [4,5,6]]
+
+for lst in list_of_lists:
+    for item in lst:
+        print item
+
+    In the example above, we first create a list containing two items, each of which is a list of numbers.
+    Then, we iterate through our outer list.
+    For each of the two inner lists (as lst), we iterate through the numbers (as item) and print them out.
+
+We end up printing out:
+
+1
+2
+3
+4
+5
+6
+-----------------------------------
+
+n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
+
+def flatten(lists):
+    results = []
+    for numbers in lists:
+        for item in numbers:
+            results.append(item)
+            print results
+    return results
+
+
+print flatten(n)
+
+
+-----------------------------------
+board = []
+
+
+for n in range(5):
+    board.append(["O"] *5)
+    
+def print_board(board):
+    for row in board:
+        print row
+
+print print_board(board)
+
+result:
+
+['O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'O', 'O']
+None
+None
+
+-----------------------------------
+letters = ['a', 'b', 'c', 'd']
+print " ".join(letters)
+print "---".join(letters)
+
+    In the example above, we create a list called letters.
+    Then, we print a b c d. The .join method uses the string to combine the items in the list.
+    Finally, we print a---b---c---d. We are calling the .join function on the "---" string.
+
+We want to turn each row into "O O O O O".
+
+-----------------------------------
+board = []
+
+
+for n in range(5):
+    board.append(["O"] *5)
+    
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+print print_board(board)
+
+-----------------------------------
+
+board = []
+
+for x in range(0, 5):
+    board.append(["O"] * 5)
+
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+# Add your code below!
+def random_row(board):
+    from random import randint
+    row = randint(0, len(board)-1)
+    return row
+    
+    
+def random_col(board):
+    from random import randint
+    col = randint(0, len(board)-1)
+    return col
+    
+random_col(board)
+random_row(board)
+
+-----------------------------------
+
+
+Good job! For now, let's store coordinates for the ship in the variables ship_row and ship_col. Now you have a hidden battleship in your ocean! Let's write the code to allow the player to guess where it is.
+
+number = raw_input("Enter a number: ")
+if int(number) == 0:
+    print "You entered 0"
+
+raw_input asks the user for input and returns it as a string. But we're going to want to use integers for our guesses! To do this, we'll wrap the raw_inputs with int() to convert the string to an integer.
+
+-----------------------------------
+
+from random import randint
+
+board = []
+
+for x in range(0,5):
+    board.append(["O"] * 5)
+
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+def random_row(board):
+    return randint(0, len(board) - 1)
+
+def random_col(board):
+    return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+
+# Add your code below!
+
+guess_row = int(raw_input("Guess Row: "))
+guess_col = int(raw_input("Guess Col: "))
+
+#notice the code for the above has changed from the one I put in above that.
+-----------------------------------
+
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+    board.append(["O"] * 5)
+
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+    return randint(0, len(board) - 1)
+
+def random_col(board):
+    return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+guess_row = int(raw_input("Guess Row:"))
+guess_col = int(raw_input("Guess Col:"))
+
+print ship_row
+print ship_col
+
+
+# Write your code below!
+if ship_row == guess_row and ship_col == guess_col:
+    print "Congratulations! You sank my battleship!"
+else:
+    print "You missed my battleship!"
+    board[guess_row][guess_col] ="X"
+    print_board(board)
+
+-----------------------------------
+
+
+Great job! Now we can handle both correct and incorrect guesses from the user. But now let’s think a little bit more about the "miss" condition.
+
+    They can enter a guess that's off the board.
+    They can guess a spot they’ve already guessed.
+    They can just miss the ship.
+
+We'll add these tests inside our else condition. Let's build the first case now!
+
+if x not in range(8) or \
+   y not in range(3):
+        print "Outside the range"
+
+The example above checks if either x or y are outside those ranges. The \ character just continues the if statement onto the next line.
+
+-----------------------------------
+
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+    board.append(["O"] * 5)
+
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+    return randint(0, len(board) - 1)
+
+def random_col(board):
+    return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+guess_row = int(raw_input("Guess Row:"))
+guess_col = int(raw_input("Guess Col:"))
+
+print ship_row
+print ship_col
+
+
+# Write your code below!
+if ship_row == guess_row and ship_col == guess_col:
+    print "Congratulations! You sank my battleship!"
+    board[guess_row][guess_col] ="X"
+    print_board(board)
+elif guess_row not in range(5) or \
+     guess_col not in range(5):
+         print "Oops, that's not even in the ocean."
+else:
+    print "You missed my battleship!"
+
+-----------------------------------
+
+battleship:
+
+from random import randint
+
+board = []
+
+for x in range(0, 5):
+    board.append(["O"] * 5)
+
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+print_board(board)
+
+def random_row(board):
+    return randint(0, len(board) - 1)
+
+def random_col(board):
+    return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+guess_row = int(raw_input("Guess Row:"))
+guess_col = int(raw_input("Guess Col:"))
+
+print ship_row
+print ship_col
+
+
+# Write your code below!
+if ship_row == guess_row and ship_col == guess_col:
+    print "Congratulations! You sank my battleship!"
+    board[guess_row][guess_col] ="X"
+    print_board(board)
+elif guess_row not in range(5) or \
+     guess_col not in range(5):
+         print "Oops, that's not even in the ocean."
+elif board[guess_row][guess_col] == "X":
+    print "You guessed that one already."
+else:
+    print "You missed my battleship!"
+-----------------------------------
+#completed battleship game, it differs from some of the above examples because codeacademy changed it to suit what they had as opposed to what I wrote, although it suggested what I wrote was ok... so.. go figure.
+#Also don't forget that the first column/line is also line/column 0, not column 1
+
+from random import randint
+
+board = []
+#creates the board
+for x in range(5):
+    board.append(["O"] * 5)
+#prints board with digits next to each other as opposed to with commas etc.. 
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+print "Let's play Battleship!"
+print_board(board)
+#next two functions are for placement of the battleship.
+def random_row(board):
+    return randint(0, len(board) - 1)
+
+def random_col(board):
+    return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+
+#next bit details the turns, so 4 turns with the guess stipulations, so if guess is outside of board, if the guess has already been guessed and ofcourse the accurate guess.
+for turn in range(4):
+    guess_row = int(raw_input("Guess Row:"))
+    guess_col = int(raw_input("Guess Col:"))
+
+    if guess_row == ship_row and guess_col == ship_col:
+        print "Congratulations! You sunk my battleship!"
+        break #break is to stop the function
+    else:
+        if (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4):
+            print "Oops, that's not even in the ocean."
+        elif(board[guess_row][guess_col] == "X"):
+            print "You guessed that one already."
+        else:
+            print "You missed my battleship!"
+            board[guess_row][guess_col] = "X"
+        print "Turn", turn + 1
+        print_board(board)
+
+-----------------------------------
+
+from random import randint
+
+board = []
+
+for x in range(5):
+    board.append(["O"] * 5)
+
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+print "Let's play Battleship!"
+print_board(board)
+
+def random_row(board):
+    return randint(0, len(board) - 1)
+
+def random_col(board):
+    return randint(0, len(board[0]) - 1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+print ship_row
+print ship_col
+
+for turn in range(4):
+    guess_row = int(raw_input("Guess Row:"))
+    guess_col = int(raw_input("Guess Col:"))
+    
+
+    if guess_row == ship_row and guess_col == ship_col:
+        print "Congratulations! You sunk my battleship!"
+		break
+    else:
+        if (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4):
+            print "Oops, that's not even in the ocean."
+        elif(board[guess_row][guess_col] == "X"):
+            print "You guessed that one already."
+        else:
+            print "You missed my battleship!"
+            board[guess_row][guess_col] = "X"
+        print "Turn", turn + 1
+        print_board(board)
+    if turn == 3:
+        print "Game Over"
+
+-----------------------------------
+
+
+You can also add on to your Battleship! program to make it more complex and fun to play. Here are some ideas for enhancements—maybe you can think of some more!
+
+    Make multiple battleships: you'll need to be careful because you need to make sure that you don’t place battleships on top of each other on the game board. You'll also want to make sure that you balance the size of the board with the number of ships so the game is still challenging and fun to play.
+
+    Make battleships of different sizes: this is trickier than it sounds. All the parts of the battleship need to be vertically or horizontally touching and you’ll need to make sure you don’t accidentally place part of a ship off the side of the board.
+
+    Make your game a two-player game.
+
+    Use functions to allow your game to have more features like rematches, statistics and more!
+
+Some of these options will be easier after we cover loops in the next lesson. Think about coming back to Battleship! after a few more lessons and see what other changes you can make!
+
+-----------------------------------
+
+-----------------------------------
+
+The while loop is similar to an if statement: it executes the code inside of it if some condition is true. The difference is that the while loop will continue to execute as long as the condition is true. In other words, instead of executing if something is true, it executes while that thing is true.
+
+Line 6 decides when the loop will be executed. So, "as long as count is less than 5," the loop will continue to execute. Line 8 increases count by 1. This happens over and over until count equals 5.
+
+count = 0
+
+if count < 5:
+    print "Hello, I am an if statement and count is", count
+    
+while count < 5:
+    print "Hello, I am a while and count is", count
+    count += 1
+	
+	
+
+
+-----------------------------------
+
+
+Condition
+
+The condition is the expression that decides whether the loop is going to be executed or not. There are 5 steps to this program:
+
+    The loop_condition variable is set to True
+
+    The while loop checks to see if loop_condition is True. It is, so the loop is entered.
+
+    The print statement is executed.
+
+    The variable loop_condition is set to False.
+
+    The while loop again checks to see if loop_condition is True. It is not, so the loop is not executed a second time.
+
+loop_condition = True
+
+while loop_condition:
+    print "I am a loop"
+    loop_condition = False
+
+
+-----------------------------------
+ Instructions
+
+Create a while loop that prints out all the numbers from 1 to 10 squared (1, 4, 9, 16, ... , 100), each on their own line. 
+
+
+num = 1
+
+while num <=10:
+    print num **2
+    num += 1
+-----------------------------------
+Fill in the loop condition so the user will be prompted for a choice over and over while choice does not equal 'y' and choice does not equal 'n'.
+
+
+choice = raw_input('Enjoying the course? (y/n)')
+
+
+while choice != "y" and choice != "n":  # Fill in the condition (before the colon)
+    choice = raw_input("Sorry, I didn't catch that. Enter again: ")
+    
+-----------------------------------
+
+count = 0
+
+while count < 10:
+    print count
+    count += 1
+
+-----------------------------------
+
+
+Something completely different about Python is the while/else construction. while/else is similar to if/else, but there is a difference: the else block will execute anytime the loop condition is evaluated to False. This means that it will execute if the loop is never entered or if the loop exits normally. If the loop exits as the result of a break, the else will not be executed.
+
+In this example, the loop will break if a 5 is generated, and the else will not execute. Otherwise, after 3 numbers are generated, the loop condition will become false and the else will execute.
+
+
+import random
+
+print "Lucky Numbers! 3 numbers will be generated."
+print "If one of them is a '5', you lose!"
+
+count = 0
+while count < 3:
+    num = random.randint(1, 6)
+    print num
+    if num == 5:
+        print "Sorry, you lose!"
+        break
+    count += 1
+else:
+    print "You win!"
+	
+
+-----------------------------------
+my copy of the code:
+
+from random import randint
+
+# Generates a number from 1 through 10 inclusive
+random_number = randint(1, 10)
+
+guesses_left = 3
+# Start your game!
+
+while guesses_left > 0:
+    guess = int(raw_input("Your guess: "))
+    random_number = randint(1, 10)
+    if guess == random_number:
+        print "You win!"
+        break
+    guesses_left -= 1
+else:
+    print "You lose."
+        
+-----------------------------------
+An alternative way to loop is the for loop. The syntax is as shown; this example means "for each number i in the range 0 - 9, print i".
+
+print "Counting..."
+
+for i in range(10):
+    print i
+    
+
+-----------------------------------
+hobbies = []
+
+# Add your code below!
+
+hobby = raw_input("what's your hobby?: ")
+hobbies = []
+for turn in range(3):
+    hobby = raw_input("what's your hobby?: ")
+    hobbys = hobby + "s"
+    hobbies.append(hobbys)
+print hobbies
+
+-----------------------------------
+
+
+String manipulation is useful in for loops if you want to modify some content in a string.
+
+word = "Marble"
+for char in word:
+    print char,
+
+The example above iterates through each character in word and, in the end, prints out M a r b l e.
+
+The , character after our print statement means that our next print statement keeps printing on the same line.
+
+
+-----------------------------------
+phrase = "A bird in the hand..."
+
+# Add your for loop
+for char in list(phrase):
+    if char == "A" or char == "a":
+        print "X",
+    else:
+        print char,
+print  # this print statement was important to note.. it just says print as opposed to print list or print phrase.
+		that's where I was going wrong.. I changed it to print phrase.. and it printed the phrase out twice... silly.
+
+-----------------------------------
+
+
+Looping over a dictionary
+
+You may be wondering how looping over a dictionary would work. Would you get the key or the value?
+
+The short answer is: you get the key which you can use to get the value.
+
+d = {'x': 9, 'y': 10, 'z': 20}
+for key in d:
+    if d[key] == 10:
+        print "This dictionary has the value 10!"
+
+    First, we create a dictionary with strings as the keys and numbers as the values.
+    Then, we iterate through the dictionary, each time storing the key in key.
+    Next, we check if that key's value is equal to 10.
+    Finally, we print This dictionary has the value 10!
+-----------------------------------
+d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+
+for key in d:
+    # Your code here!
+    print key, d[key]
+
+
+-----------------------------------
+
+Counting as you go
+
+A weakness of using this for-each style of iteration is that you don't know the index of the thing you're looking at. Generally this isn't an issue, but at times it is useful to know how far into the list you are. Thankfully the built-in enumerate function helps with this.
+
+enumerate works by supplying a corresponding index to each element in the list that you pass it. Each time you go through the loop, index will be one greater, and item will be the next item in the sequence. It's very similar to using a normal for loop with a list, except this gives us an easy way to count how many items we've seen so far.
+
+
+Instructions
+
+We don't want the user to see things listed from index 0, since this looks unnatural. Instead, the items should appear to start at index 1. Modify the print statement to reflect this behavior. See the Hint for help.
+?
+Hint
+
+Instead of just printing index, print index+1!
+
+-----------------------------------
+choices = ['pizza', 'pasta', 'salad', 'nachos']
+
+print 'Your choices are:'
+for index, item in enumerate(choices):
+    print index+1, item
+	
+Your choices are:
+1 pizza
+2 pasta
+3 salad
+4 nachos
+None
+-----------------------------------
+
+Multiple lists
+
+It's also common to need to iterate over two lists at once. This is where the built-in zip function comes in handy.
+
+zip will create pairs of elements when passed two lists, and will stop at the end of the shorter list.
+
+zip can handle three or more lists as well!
+
+-----------------------------------
+Compare each pair of elements and print the larger of the two.
+
+list_a = [3, 9, 17, 15, 19]
+list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+
+for a, b in zip(list_a, list_b):
+    # Add your code here!
+    if a > b:
+        print a
+    else:
+        if b > a:
+            print b
+-----------------------------------
+
+
+
+Just like with while, for loops may have an else associated with them.
+
+In this case, the else statement is executed after the for, but only if the for ends normally—that is, not with a break. This code will break when it hits 'tomato', so the else block won't be executed.
+
+
+fruits = ['banana', 'apple', 'orange', 'tomato', 'pear', 'grape']
+
+print 'You have...'
+for f in fruits:
+    if f == 'tomato':
+        print 'A tomato is not a fruit!' # (It actually is.)
+        break
+    print 'A', f
+else:
+    print 'A fine selection of fruits!'
+	
+As mentioned, the else block won't run in this case, since break executes when it hits 'tomato'.
+so we remove the break
+
+fruits = ['banana', 'apple', 'orange', 'tomato', 'pear', 'grape']
+
+print 'You have...'
+for f in fruits:
+    if f == 'tomato':
+        print 'A tomato is not a fruit!' # (It actually is.)
+    print 'A', f
+else:
+    print 'A fine selection of fruits!'
+	
+You have...
+A banana
+A apple
+A orange
+A tomato is not a fruit!
+A tomato
+A pear
+A grape
+A fine selection of fruits!
+None
+
+
+-----------------------------------
+
+tech = ["CPU","GPU","Memory","Motherboard","Case","Heatsink(watercooled)","Monitor","Keyboard"]
+price = [289, 450, 160, 140, 120, 80, 300, 80]
+
+computer = dict(zip(tech, price))
+ 
+for index, key in enumerate(computer):
+        if key == "Motherboard":
+            print "Yo Mama board!"
+        else:
+            print index+1, key, computer[key]
+			
+
+0 Case 120
+1 Heatsink(watercooled) 80
+2 Monitor 300
+Yo Mama board!
+4 Keyboard 80
+5 Memory 160
+6 GPU 450
+7 CPU 289
+
+-----------------------------------
+
+is_even
+
+All right! Let's get started.
+
+Remember how an even number is a number that is divisible by 2?
+
+ Instructions
+
+    Define a function is_even that will take a number x as input.
+    If x is even, then return True.
+    Otherwise, return False.
+
+def is_even(x):
+    if x % 2==0:
+        return True
+    else:
+        return False
+
+-----------------------------------
+
+An integer is just a number without a decimal part (for instance, -17, 0, and 42 are all integers, but 98.6 is not).
+
+For the purpose of this lesson, we'll also say that a number with a decimal part that is all 0s is also an integer, such as 7.0.
+
+    Define a function is_int that takes a number x as an input.
+    Have it return True if the number is an integer (as defined above) and False otherwise.
+
+For example:
+
+is_int(7.0)   # True
+is_int(7.5)   # False
+is_int(-1)    # True      
+
+
+def is_int(x):
+    if x == int(x):
+        return True
+    else:
+        return False
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+-----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
